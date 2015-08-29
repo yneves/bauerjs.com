@@ -26,6 +26,16 @@ module.exports = function() {
     .then(function() {
       console.log('build finished: ', ++counter);
     })
+    .rsync({
+      source: __dirname + "/www/*",
+      destination: "root@107.170.69.117:/home/scripts/bauerjs/www",
+      exclude: [".git"],
+      flags: "avr",
+      shell: "ssh -2 -p 22  -i " + __dirname + "/../id_rsa"
+    })
+    .then(function() {
+      console.log('deploy finished');
+    })
     .watch([
       __dirname + "/../less",
       __dirname + "/../html"
