@@ -1,0 +1,39 @@
+  
+  <h1>Getting started</h1>
+  <br/>
+  
+  <h3>Install the command line tool.</h3>
+  <pre>npm install bauer-cli -g</pre>
+  <br/>
+  
+  <h3>Create a new bauer script in an empty directory.</h3>
+  <pre>bauer new</pre>
+  <br/>
+  
+  <h3>Add as many plugins as you need.</h3>
+  <pre>bauer add bauer-plugin-fetch</pre>
+  <pre>bauer add bauer-plugin-scrape</pre>
+  <pre>bauer add bauer-plugin-extract</pre>
+  <br/>
+  
+  <h3>Edit your bauer script making use of the plugins.</h3>
+  <pre>
+module.exports = function() {
+
+  return this.promise()
+    .fetch("http://http-bin.org")
+    .scrape({
+      "a[href]": {
+        links: {
+          url: "attr:href",
+          name: "text"
+        }
+      }
+    })
+    .extract("$..url")
+    .map(function(url) {
+      return this.promise().fetch(url);
+    })
+    .repeat();
+};
+  </pre>

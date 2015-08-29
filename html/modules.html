@@ -1,0 +1,41 @@
+<h1>Core</h1>
+<ul>
+  <% core.forEach(function(mod) {
+    print(
+      "<li>" +
+        "<span class=\"module core\">" + mod.name + "</span> - " +
+        "<span>" + mod.description + "</span>" +
+        "<a class=\"git\" href=\"" + github + mod.git + "\">git</a>" +
+        "<a class=\"npm\" href=\"" + npm + mod.npm + "\">npm</a>" +
+      "</li>\n"
+    );
+  }) %>
+</ul>
+
+<h1>Plugins</h1>
+<ul>
+  <% plugins.forEach(function(mod) {
+    print(
+      "<li>" +
+        "<span class=\"module plugin\">" + mod.name + "</span> - " +
+        "<span>" + mod.description + "</span>" +
+        "<a class=\"git\" href=\"" + github + mod.git + "\">git</a>" +
+        "<a class=\"npm\" href=\"" + npm + mod.npm + "\">npm</a>" +
+      "</li>\n"
+    );
+  }) %>
+</ul>
+
+<h1>Utils</h1>
+<ul>
+  <% utils.forEach(function(mod) {
+    print(
+      "<li>" +
+        "<span class=\"module util\">" + mod.name + "</span> - " +
+        "<span>" + mod.description + "</span>" +
+        "<a class=\"git\" href=\"" + github + mod.git + "\">git</a>" + 
+        "<a class=\"npm\" href=\"" + npm + mod.npm + "\">npm</a>" +
+      "</li>\n"
+    );
+  }) %>
+</ul>

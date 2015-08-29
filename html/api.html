@@ -1,0 +1,13 @@
+<div class="api">
+  <% _.keys(api).forEach(function(name) {
+    print("<h2>" + name + "</h2>\n");
+    print("<ul>\n" + api[name].map(function(method) {
+      var file = method.files[0];
+      return "<li>" + 
+        (file ? "<a class=\"method\" href=\"" + github + file.repo + dir + file.file + "#L" + file.line + "\">" : "") + 
+        method.signature + 
+        (file ? "</a>" : "") + 
+      "</li>\n";
+    }).join("") + "</ul>\n");
+  }) %>
+</div>

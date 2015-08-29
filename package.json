@@ -1,0 +1,19 @@
+{
+  "name": "bauerjs.com",
+  "version": "0.1.0",
+  "plugins": [
+    "bauer-plugin-extract",
+    "bauer-plugin-render",
+    "bauer-plugin-watch",
+    "bauer-plugin-glob"
+  ],
+  "config": {},
+  "main": "./main.js",
+  "dependencies": {
+    "bauer-crawler": "^0.1.12",
+    "bauer-plugin-extract": "^0.1.5",
+    "bauer-plugin-glob": "^0.1.0",
+    "bauer-plugin-render": "^0.1.2",
+    "bauer-plugin-watch": "^0.1.1"
+  }
+}

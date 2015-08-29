@@ -1,0 +1,151 @@
+// ------------------------------------------------------------- //
+
+@import './reset.less';
+@import './mixins.less';
+
+@dark: #333;
+@light: #EEE;
+@white: #FFF;
+@black: #111;
+@grey: #BBB;
+@red: #cb3837;
+@orange: #E19D38;
+@font: Arial;
+
+// ------------------------------------------------------------- //
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  
+  h1 {
+    font-size: 30px;
+  }
+  
+  a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: @white;
+    background-color: @dark;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+// ------------------------------------------------------------- //
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: 30px;
+  background-color: @light;
+  
+  a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: @dark;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px 0;
+  }
+}
+
+// ------------------------------------------------------------- //
+
+nav {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  bottom: 30px;
+  width: 200px;
+  background-color: @light;
+  
+  li {
+    
+    &.active {
+      background-color: white;
+      border-left: 5px solid @orange;
+      border-right: 5px solid transparent;
+    }
+  }
+  
+  a {
+    display: block;
+    color: @dark;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+// ------------------------------------------------------------- //
+
+main {
+  padding: 20px 20px 20px 240px;
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  ul {
+    margin-bottom: 20px;
+    list-style-type: none;
+    
+    li {
+      padding: 5px 0;
+    }
+  }
+  
+  pre {
+    .rounded(3px);
+    border: 1px solid @grey;
+    background-color: @light;
+    padding: 5px;
+    margin: 7px 0;
+  }
+  
+  .module, .method, .npm, .git {
+    display: inline-block;
+    padding: 0px 5px;
+    .rounded(3px);
+    .opacity(0.7);
+    
+    &:hover {
+      .opacity(1);
+    }
+  }
+  
+  .module, .method {
+    background-color: @light;
+    color: @black;
+  }
+  
+  .git, .npm {
+    margin-left: 5px;
+    font-size: 12px;
+    color: @white;
+  }
+  
+  .git {
+    background-color: @dark;
+  }
+  
+  .npm {
+    background-color: @red;
+  }
+}
+
+// ------------------------------------------------------------- //

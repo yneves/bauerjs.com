@@ -1,0 +1,11 @@
+<ul>
+  <% menu.forEach(function(item) {
+    print(
+      "<li" + (item === active ? " class=\"active\"" : "") + ">" + 
+        "<a href=\"/" + (item === index ? "" : item + ".html")  + "\">" + 
+          item + 
+        "</a>" + 
+      "</li>\n"
+    );
+  }) %>
+</ul>
