@@ -6,8 +6,7 @@ module.exports = function(name,api) {
   
   var mod = __dirname + "/../../" + name;
   
-  return this.promise()
-    .extract(mod + "/README.md", /## API Summary([^#]+)#/)
+  return this.Promise.extract(mod + "/README.md", /## API Summary([^#]+)#/)
     .then(function(text) {
       
       var lines = text && text[0] ? text[0].split(/\n/) : [];
@@ -38,7 +37,7 @@ module.exports = function(name,api) {
         }
       }.bind(this));
       
-      return this.promise(promises);
+      return this.Promise.all(promises);
     });
 };
 // - -------------------------------------------------------------------- - //

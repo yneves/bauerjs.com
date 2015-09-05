@@ -1,8 +1,8 @@
 // - -------------------------------------------------------------------- - //
 
 module.exports = function(api) {
-      
-  this.promise()
+
+  return this.Promise
     .render(__dirname + "/../html/layout.html",{
       target: __dirname + "/../www/api.html",
       values: { 

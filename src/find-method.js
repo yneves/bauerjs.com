@@ -8,14 +8,11 @@ module.exports = function(mod,method) {
   
   var fileMethod = [];
   
-  return this.promise()
-    .glob(mod + "/lib/*.js")
+  return this.Promise.glob(mod + "/lib/*.js")
     .each(function(filepath) {
     
-      return this.promise()
-        .extract(filepath,{ lines: true })
+      return this.Promise.extract(filepath,{ lines: true })
         .then(function(lines) {
-          
           var lineNumber = -1;
           lines.forEach(function(line,index) {
             if (line.indexOf(method) > -1) {
@@ -27,7 +24,6 @@ module.exports = function(mod,method) {
             file: "/lib/" + path.basename(filepath),
             line: lineNumber
           };
-          
           return filepath;
         });
     })

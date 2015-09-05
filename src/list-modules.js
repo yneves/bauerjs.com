@@ -2,7 +2,7 @@
 
 module.exports = function() {
 
-  return this.promise().return([
+  return this.Promise.bind(this).return([
     "node-bauer-cluster",
     "node-bauer-cluster-queue",
     "node-bauer-cluster-super",
@@ -16,6 +16,7 @@ module.exports = function() {
     "node-bauer-plugin-render",
     "node-bauer-plugin-extract",
     "node-bauer-plugin-rsync",
+    "node-bauer-promise",
     "node-bauer-factory",
     "node-bauer-cache",
     "node-bauer-exec",

@@ -12,7 +12,8 @@ module.exports = function() {
   var compileLESS = require("./src/compile-less.js");
   var listModules = require("./src/list-modules.js");
   
-  return this.promise()
+  return this.Promise
+    .print("Build started")
     .then(listModules)
     .then(renderModules)
     .map(function(name) {
@@ -23,9 +24,7 @@ module.exports = function() {
     .then(renderIndex)
     .then(compileLESS)
     
-    .then(function() {
-      console.log('build finished: ', ++counter);
-    })
+    .print("Build finished")
     .rsync({
       source: __dirname + "/www/*",
       destination: "root@107.170.69.117:/home/scripts/bauerjs/www",
@@ -33,16 +32,12 @@ module.exports = function() {
       flags: "avr",
       shell: "ssh -2 -p 22  -i " + __dirname + "/../id_rsa"
     })
-    .then(function() {
-      console.log('deploy finished');
-    })
+    .print("Deployed")
     .watch([
       __dirname + "/../less",
       __dirname + "/../html"
     ])
-    .then(function(details) {
-      console.log('file changed: ',details.path);
-    })
+    .print("File changed.")
     .repeat();
 };
 

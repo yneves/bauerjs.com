@@ -25,7 +25,7 @@ module.exports = function(modules) {
     return !/plugin|crawler|cluster|cli/.test(mod.name);
   });
       
-  return this.promise()
+  return this.Promise
     .render(__dirname + "/../html/layout.html",{
       target: __dirname + "/../www/modules.html",
       values: { 

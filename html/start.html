@@ -1,27 +1,34 @@
   
-  <h1>Getting started</h1>
-  <br/>
+<h1>Getting started</h1>
+<br/>
+
+<h3>Install the command line tool.</h3>
+<pre>npm install bauer-cli -g</pre>
+<br/>
+
+<h3>Create a new bauer script.</h3>
+<pre>bauer init script</pre>
+<br/>
+
+<h3>Create a new bauer plugin.</h3>
+<pre>bauer init plugin</pre>
+<br/>
+
+<h3>Adds plugins to the bauer script.</h3>
+<pre>
+bauer add bauer-plugin-fetch
+bauer add bauer-plugin-scrape
+bauer add bauer-plugin-extract
+</pre>
+<br/>
   
-  <h3>Install the command line tool.</h3>
-  <pre>npm install bauer-cli -g</pre>
-  <br/>
-  
-  <h3>Create a new bauer script in an empty directory.</h3>
-  <pre>bauer new</pre>
-  <br/>
-  
-  <h3>Add as many plugins as you need.</h3>
-  <pre>bauer add bauer-plugin-fetch</pre>
-  <pre>bauer add bauer-plugin-scrape</pre>
-  <pre>bauer add bauer-plugin-extract</pre>
-  <br/>
-  
-  <h3>Edit your bauer script making use of the plugins.</h3>
-  <pre>
+<h3>Edit your bauer script making use of the plugins.</h3>
+<pre>
 module.exports = function() {
 
-  return this.promise()
+  return this.Promise
     .fetch("http://http-bin.org")
+    .print("Page downloaded.")
     .scrape({
       "a[href]": {
         links: {
@@ -31,9 +38,11 @@ module.exports = function() {
       }
     })
     .extract("$..url")
+    .print("Links matched.")
     .map(function(url) {
-      return this.promise().fetch(url);
+      return this.Promise.fetch(url);
     })
+    .print("Links downloaded.")
     .repeat();
 };
-  </pre>
+</pre>

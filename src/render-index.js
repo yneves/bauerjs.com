@@ -2,7 +2,7 @@
 
 module.exports = function() {
     
-  return this.promise()
+  return this.Promise
     .render(__dirname + "/../html/layout.html",{
       target: __dirname + "/../www/index.html",
       values: { 

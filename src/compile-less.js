@@ -5,10 +5,10 @@ var less = require("less");
 
 module.exports = function() {
 
-  return this.promise()
+  return this.Promise
     .extract(__dirname + "/../less/style.less",{ raw: true })
     .then(function(content) {
-      return this.promise(function(resolve,reject) {
+      return new this.Promise(function(resolve,reject) {
         less.render(content, { paths: [__dirname + "/../less"] }, function (error, output) {
           if (!error) {
             fs.writeFile(__dirname + "/../www/style.css",output.css,function(error) {
@@ -20,7 +20,7 @@ module.exports = function() {
             });
           }
         });
-      });
+      }).bind(this);
     });
 };
 
