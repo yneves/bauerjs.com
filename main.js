@@ -1,7 +1,5 @@
 // - -------------------------------------------------------------------- - //
 
-var counter = 0;
-
 module.exports = function() {
   
   var api = {};
@@ -38,7 +36,7 @@ module.exports = function() {
       __dirname + "/../html"
     ])
     .print("File changed.")
-    .repeat();
+    .repeat(true);
 };
 
 // - -------------------------------------------------------------------- - //

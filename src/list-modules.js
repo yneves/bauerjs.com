@@ -16,6 +16,7 @@ module.exports = function() {
     "node-bauer-plugin-render",
     "node-bauer-plugin-extract",
     "node-bauer-plugin-rsync",
+    "node-bauer-plugin-grunt",
     "node-bauer-promise",
     "node-bauer-factory",
     "node-bauer-cache",
