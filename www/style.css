@@ -150,8 +150,8 @@ header a {
   left: 0;
   bottom: 0;
   right: 0;
-  color: #ffffff;
-  background-color: #333333;
+  color: #FFF;
+  background-color: #333;
   padding: 10px;
   text-align: center;
 }
@@ -161,7 +161,7 @@ footer {
   bottom: 0;
   width: 200px;
   height: 30px;
-  background-color: #eeeeee;
+  background-color: #EEE;
 }
 footer a {
   display: block;
@@ -170,7 +170,7 @@ footer a {
   left: 0;
   bottom: 0;
   right: 0;
-  color: #333333;
+  color: #333;
   text-align: center;
   font-size: 14px;
   padding: 5px 0;
@@ -181,16 +181,16 @@ nav {
   left: 0;
   bottom: 30px;
   width: 200px;
-  background-color: #eeeeee;
+  background-color: #EEE;
 }
 nav li.active {
   background-color: white;
-  border-left: 5px solid #e19d38;
+  border-left: 5px solid #E19D38;
   border-right: 5px solid transparent;
 }
 nav a {
   display: block;
-  color: #333333;
+  color: #333;
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -212,8 +212,8 @@ main pre {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #bbbbbb;
-  background-color: #eeeeee;
+  border: 1px solid #BBB;
+  background-color: #EEE;
   padding: 5px;
   margin: 7px 0;
 }
@@ -246,17 +246,17 @@ main .git:hover {
 }
 main .module,
 main .method {
-  background-color: #eeeeee;
-  color: #111111;
+  background-color: #EEE;
+  color: #111;
 }
 main .git,
 main .npm {
   margin-left: 5px;
   font-size: 12px;
-  color: #ffffff;
+  color: #FFF;
 }
 main .git {
-  background-color: #333333;
+  background-color: #333;
 }
 main .npm {
   background-color: #cb3837;

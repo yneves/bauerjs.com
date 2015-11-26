@@ -11,11 +11,12 @@
   "config": {},
   "main": "./main.js",
   "dependencies": {
-    "bauer-crawler": "^0.2.4",
-    "bauer-plugin-extract": "^0.2.0",
-    "bauer-plugin-glob": "^0.2.0",
-    "bauer-plugin-render": "^0.2.0",
-    "bauer-plugin-rsync": "^0.2.0",
-    "bauer-plugin-watch": "^0.2.0"
+    "bauer-crawler": "^0.2.8",
+    "bauer-plugin-extract": "^0.2.2",
+    "bauer-plugin-glob": "^0.2.1",
+    "bauer-plugin-render": "^0.2.1",
+    "bauer-plugin-rsync": "^0.2.1",
+    "bauer-plugin-watch": "^0.2.1",
+    "less": "^2.5.3"
   }
 }
