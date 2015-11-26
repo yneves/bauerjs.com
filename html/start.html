@@ -28,9 +28,9 @@ bauer add bauer-plugin-extract
   
 <h3>Edit your bauer script making use of the plugins.</h3>
 <pre>
-module.exports = function() {
+module.exports = function(Promise) {
 
-  return this.Promise
+  return Promise
     .fetch("http://http-bin.org")
     .print("Page downloaded.")
     .scrape({
