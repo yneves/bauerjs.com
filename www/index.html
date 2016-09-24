@@ -70,7 +70,7 @@ module.exports = function(Promise) {
     .extract("$..url")
     .print("Links matched.")
     .map(function(url) {
-      return this.Promise.fetch(url);
+      return Promise.fetch(url);
     })
     .print("Links downloaded.")
     .repeat();
